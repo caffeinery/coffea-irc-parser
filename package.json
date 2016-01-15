@@ -1,0 +1,42 @@
+{
+  "name": "coffea-irc-parser",
+  "version": "0.1.0",
+  "description": "an irc parser for node.js, that powers coffea-irc",
+  "author": "Caffeinery Developers <daniel.bugl@touchlay.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/caffeinery/coffea-irc-parser.git"
+  },
+  "keywords": [
+    "irc",
+    "es6",
+    "chat",
+    "protocol",
+    "parser"
+  ],
+  "bugs": {
+    "url": "https://github.com/caffeinery/coffea-irc-parser/issues"
+  },
+  "dependencies": {
+    "debug-dude": "^1.0.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.4.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-register": "^6.4.3",
+    "chai": "^3.4.1",
+    "coveralls": "^2.11.6",
+    "eslint": "^1.10.3",
+    "eslint-config-touchlay": "^0.1.1",
+    "isparta": "^4.0.0",
+    "mocha": "^2.3.4"
+  },
+  "engine": "node >= 4.0.0",
+  "scripts": {
+    "test": "mocha --reporter spec --compilers js:babel-register ",
+    "test:cov": "isparta cover ./node_modules/mocha/bin/_mocha src --include-all-sources --report lcovonly -- --reporter spec --compilers js:babel-register --bail",
+    "text:cov:upload": "cat ./coverage/lcov.info | node node_modules/coveralls/bin/coveralls.js",
+    "linter": "eslint src"
+  },
+  "license": "BSD-2-Clause"
+}
