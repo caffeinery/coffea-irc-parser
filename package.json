@@ -18,6 +18,7 @@
     "url": "https://github.com/caffeinery/coffea-irc-parser/issues"
   },
   "dependencies": {
+    "debug": "^2.2.0",
     "debug-dude": "^1.0.3"
   },
   "devDependencies": {
@@ -27,6 +28,7 @@
     "chai": "^3.4.1",
     "coveralls": "^2.11.6",
     "eslint": "^1.10.3",
+    "eslint-config-standard": "^4.4.0",
     "eslint-config-touchlay": "^0.1.1",
     "isparta": "^4.0.0",
     "mocha": "^2.3.4"
@@ -35,7 +37,7 @@
   "scripts": {
     "test": "mocha --reporter spec --compilers js:babel-register ",
     "test:cov": "isparta cover ./node_modules/mocha/bin/_mocha src --include-all-sources --report lcovonly -- --reporter spec --compilers js:babel-register --bail",
-    "text:cov:upload": "cat ./coverage/lcov.info | node node_modules/coveralls/bin/coveralls.js",
+    "test:cov:upload": "cat ./coverage/lcov.info | node node_modules/coveralls/bin/coveralls.js",
     "linter": "eslint src"
   },
   "license": "BSD-2-Clause"
