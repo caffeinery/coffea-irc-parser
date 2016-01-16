@@ -59,7 +59,7 @@ export default function parse (line) {
       userinfo.sender = prefix.slice(ppos + 1)
     }
 
-    pos = line.indexOf(' ', pos) + 1
+    pos = pos + prefix.length + 1
   } else {
     throw parse_error
   }
@@ -74,6 +74,7 @@ export default function parse (line) {
    */
   if (line.indexOf(' ', pos) === -1) {
     if (line.length > pos) {
+      console.log(line.length, pos)
       command = line.slice(pos)
       return {
         tags: tags,
@@ -82,9 +83,10 @@ export default function parse (line) {
       }
     }
     throw parse_error
+  } else {
+    command = line.slice(pos, line.indexOf(' ', pos))
   }
 
-  command = line.slice(pos, line.indexOf(' ', pos))
   pos = line.indexOf(' ', pos)
 
   /**

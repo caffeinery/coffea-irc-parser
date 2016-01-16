@@ -9,16 +9,16 @@ describe('coffea-irc-parser.parse', () => {
   describe('ircv3 message tags', () => {
     it('should thrw on a message with just message-tags', (done) => {
       expect(() => {
-        parse(invalid1)
-      }).to.throw
+        return parse(invalid1)
+      }).to.throw(Error)
 
       done()
     })
 
     it('should throw on a mesage without a command', (done) => {
       expect(() => {
-        parse(invalid2)
-      }).to.throw
+        return parse(invalid2)
+      }).to.throw(Error)
 
       done()
     })
