@@ -73,8 +73,7 @@ export default function parse (line) {
    * GET COMMAND (PRIVMSG | NOTICE)
    */
   if (line.indexOf(' ', pos) === -1) {
-    if (line.length > pos) {
-      console.log(line.length, pos)
+    if (line.length > pos) 
       command = line.slice(pos)
       return {
         tags: tags,
